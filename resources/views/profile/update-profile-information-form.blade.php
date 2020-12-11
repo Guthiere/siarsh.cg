@@ -72,10 +72,20 @@
             <x-jet-input id="dni" type="dni" class="mt-1 block w-full" wire:model.defer="state.dni" />
             <x-jet-input-error for="dni" class="mt-2" />
         </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="active" value="{{ __('Activo / Inactvo') }}" />
+            <select id="active" name="active" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              <option value="1">{{ __('Activo' ) }}</option>
+              <option value="0">{{ __('Inactvo') }}</option>
+            </select>
+          </div>
+
+
     </x-slot>
 
     <x-slot name="actions">
-        <x-jet-action-message class="mr-3" on="saved">
+        <x-jet-action-message class="mr-3 bg-green-400 text-green-800" on="saved">
             {{ __('Saved.') }}
         </x-jet-action-message>
 
