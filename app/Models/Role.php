@@ -14,11 +14,10 @@ class Role extends Model
     ];
 
     public function users(){
-        return $this->belongsToMany('App\Models\User')->withTimesTamps();
+        return $this->belongsToMany(User::Class)->withTimesTamps();
     }
 
-    public function permissions(){
-        return $this->belongsToMany('App\Models\Permission')->withTimesTamps();
-
+    public function permisos(){
+        return $this->belongsToMany(Permiso::Class)->withTimesTamps();
     }
 }
